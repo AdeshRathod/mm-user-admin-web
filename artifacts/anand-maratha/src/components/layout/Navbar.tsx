@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoSrc from "@assets/download_1779972877490.png";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -11,24 +12,21 @@ export function Navbar() {
   const isActive = (path: string) => location === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border shadow-sm">
+    <nav className="sticky top-0 z-50 w-full bg-white border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="bg-primary p-2 rounded-full text-secondary">
-              <Heart size={20} className="fill-secondary" />
-            </div>
-            <span className="font-serif text-2xl font-bold text-primary tracking-tight">Anand Maratha</span>
+          <Link href="/" className="flex items-center">
+            <img src={logoSrc} alt="Maratha Mangal" className="h-14 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-1">
-            <Link href="/" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-accent ${isActive('/') ? 'text-accent border-b-2 border-secondary' : 'text-foreground'}`}>Home</Link>
-            <Link href="/rules" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-accent ${isActive('/rules') ? 'text-accent border-b-2 border-secondary' : 'text-foreground'}`}>Rules</Link>
+            <Link href="/" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-primary ${isActive('/') ? 'text-primary border-b-2 border-primary' : 'text-foreground'}`}>Home</Link>
+            <Link href="/rules" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-primary ${isActive('/rules') ? 'text-primary border-b-2 border-primary' : 'text-foreground'}`}>Rules</Link>
             
             {/* Search Dropdown */}
             <div className="relative group" onMouseEnter={() => setSearchOpen(true)} onMouseLeave={() => setSearchOpen(false)}>
-              <button className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-accent text-foreground flex items-center">
+              <button className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-primary text-foreground flex items-center">
                 Search <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
               {searchOpen && (
@@ -41,7 +39,7 @@ export function Navbar() {
 
             {/* Profiles Dropdown */}
             <div className="relative group" onMouseEnter={() => setProfilesOpen(true)} onMouseLeave={() => setProfilesOpen(false)}>
-              <button className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-accent text-foreground flex items-center">
+              <button className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-primary text-foreground flex items-center">
                 Profiles <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
               {profilesOpen && (
@@ -54,15 +52,15 @@ export function Navbar() {
               )}
             </div>
 
-            <Link href="/response" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-accent ${isActive('/response') ? 'text-accent border-b-2 border-secondary' : 'text-foreground'}`}>Response</Link>
-            <Link href="/horoscope" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-accent ${isActive('/horoscope') ? 'text-accent border-b-2 border-secondary' : 'text-foreground'}`}>Horoscope</Link>
-            <Link href="/success-stories" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-accent ${isActive('/success-stories') ? 'text-accent border-b-2 border-secondary' : 'text-foreground'}`}>Success Stories</Link>
-            <Link href="/contact" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-accent ${isActive('/contact') ? 'text-accent border-b-2 border-secondary' : 'text-foreground'}`}>Contact Us</Link>
+            <Link href="/response" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-primary ${isActive('/response') ? 'text-primary border-b-2 border-primary' : 'text-foreground'}`}>Response</Link>
+            <Link href="/horoscope" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-primary ${isActive('/horoscope') ? 'text-primary border-b-2 border-primary' : 'text-foreground'}`}>Horoscope</Link>
+            <Link href="/success-stories" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-primary ${isActive('/success-stories') ? 'text-primary border-b-2 border-primary' : 'text-foreground'}`}>Success Stories</Link>
+            <Link href="/contact" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-primary ${isActive('/contact') ? 'text-primary border-b-2 border-primary' : 'text-foreground'}`}>Contact Us</Link>
             
             <div className="flex items-center ml-4 space-x-3 border-l border-border pl-4">
               <Link href="/login" className="px-4 py-2 text-sm font-medium text-primary hover:text-accent transition-colors">Login</Link>
               <Link href="/renew" className="px-4 py-2 text-sm font-medium text-primary hover:text-accent transition-colors">Renew</Link>
-              <Link href="/enroll" className="px-5 py-2.5 text-sm font-medium bg-secondary text-primary rounded-md shadow-sm hover:bg-secondary/90 transition-colors">Enroll</Link>
+              <Link href="/enroll" className="px-5 py-2.5 text-sm font-medium bg-primary text-white rounded-md shadow-sm hover:bg-accent transition-colors">Enroll</Link>
             </div>
           </div>
 
@@ -77,7 +75,7 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="lg:hidden bg-background border-b border-border shadow-lg absolute w-full left-0">
+        <div className="lg:hidden bg-white border-b border-border shadow-lg absolute w-full left-0">
           <div className="px-4 pt-2 pb-6 space-y-1">
             <Link href="/" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-foreground hover:bg-muted rounded-md">Home</Link>
             <Link href="/rules" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-foreground hover:bg-muted rounded-md">Rules</Link>
@@ -87,7 +85,7 @@ export function Navbar() {
             <Link href="/contact" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-foreground hover:bg-muted rounded-md">Contact Us</Link>
             <div className="border-t border-border pt-4 pb-2 mt-4 flex flex-col space-y-3 px-3">
               <Link href="/login" onClick={() => setIsOpen(false)} className="w-full text-center px-4 py-3 text-base font-medium text-primary border border-primary rounded-md">Login</Link>
-              <Link href="/enroll" onClick={() => setIsOpen(false)} className="w-full text-center px-4 py-3 text-base font-medium bg-secondary text-primary rounded-md">Enroll Now</Link>
+              <Link href="/enroll" onClick={() => setIsOpen(false)} className="w-full text-center px-4 py-3 text-base font-medium bg-primary text-white rounded-md">Enroll Now</Link>
             </div>
           </div>
         </div>

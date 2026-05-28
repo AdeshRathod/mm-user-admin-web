@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock, AlertTriangle, Instagram, Facebook, Twitter, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, AlertTriangle, Instagram, Facebook, Twitter, CheckCircle } from "lucide-react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -17,7 +17,7 @@ export default function Contact() {
 
   return (
     <PageLayout>
-      <PageHero title="Contact Us" subtitle="We're here to help — Tuesday to Sunday, 11 AM to 7 PM" />
+      <PageHero title="Contact Us" subtitle="We're here to help — reach us anytime" />
       
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -28,35 +28,26 @@ export default function Contact() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-card p-5 rounded-xl border border-border flex items-start gap-4">
-                <MapPin className="text-accent w-6 h-6 mt-1 flex-shrink-0" />
+                <MapPin className="text-primary w-6 h-6 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-bold text-primary mb-1">Office Address</h3>
-                  <p className="text-sm text-foreground/80 leading-relaxed">207, 2nd Floor, Atharva Plaza, Opp. Shankar Math, Satara Road, Dhankawadi, Pune 411043</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">Bibwewadi, Pune 411037</p>
                 </div>
               </div>
               
               <div className="bg-card p-5 rounded-xl border border-border flex items-start gap-4">
-                <Clock className="text-accent w-6 h-6 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-bold text-primary mb-1">Office Hours</h3>
-                  <p className="text-sm text-foreground/80">Tue to Sun — 11 AM to 7 PM</p>
-                  <p className="text-sm font-medium text-destructive mt-1">Monday: Closed</p>
-                </div>
-              </div>
-              
-              <div className="bg-card p-5 rounded-xl border border-border flex items-start gap-4">
-                <Phone className="text-accent w-6 h-6 mt-1 flex-shrink-0" />
+                <Phone className="text-primary w-6 h-6 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-bold text-primary mb-1">Phone</h3>
-                  <a href="tel:+919822214005" className="text-sm text-foreground/80 hover:text-primary transition-colors">+91 98222 14005</a>
+                  <a href="tel:+917888036366" className="text-sm text-foreground/80 hover:text-primary transition-colors">+91 7888036366</a>
                 </div>
               </div>
               
               <div className="bg-card p-5 rounded-xl border border-border flex items-start gap-4">
-                <Mail className="text-accent w-6 h-6 mt-1 flex-shrink-0" />
+                <Mail className="text-primary w-6 h-6 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-bold text-primary mb-1">Email</h3>
-                  <a href="mailto:contact@anandmaratha.com" className="text-sm text-foreground/80 hover:text-primary transition-colors">contact@anandmaratha.com</a>
+                  <a href="mailto:info@marathamangal.com" className="text-sm text-foreground/80 hover:text-primary transition-colors">info@marathamangal.com</a>
                 </div>
               </div>
             </div>
@@ -64,7 +55,7 @@ export default function Contact() {
             <div className="bg-red-50 border border-red-200 rounded-xl p-5 flex gap-4">
               <AlertTriangle className="text-red-500 w-6 h-6 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-red-900 leading-relaxed">
-                <span className="font-bold">Important:</span> Official payment links are only sent from info@anandmaratha.com or contact@anandmaratha.com and via SMS from sender ID ANANDM-S. Beware of fraud.
+                <span className="font-bold">Important:</span> Official payment links are only sent from info@marathamangal.com. Beware of fraud.
               </p>
             </div>
 
@@ -136,7 +127,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-secondary text-primary hover:bg-secondary/90 font-bold" data-testid="button-submit-contact">
+                <Button type="submit" className="w-full bg-primary text-white hover:bg-accent font-bold" data-testid="button-submit-contact">
                   Send Message
                 </Button>
               </form>
@@ -148,9 +139,9 @@ export default function Contact() {
         {/* Map Placeholder */}
         <div className="w-full h-80 bg-muted rounded-2xl border border-border flex flex-col items-center justify-center relative overflow-hidden group">
           <div className="absolute inset-0 bg-[url('https://maps.wikimedia.org/osm-intl/13/5829/3681.png')] opacity-30 bg-cover bg-center grayscale mix-blend-multiply"></div>
-          <MapPin className="text-accent w-12 h-12 mb-3 relative z-10 drop-shadow-md group-hover:-translate-y-2 transition-transform" />
-          <h3 className="font-serif font-bold text-xl text-primary relative z-10 bg-white/80 px-4 py-1 rounded backdrop-blur">Anand Maratha Marriage Bureau</h3>
-          <p className="text-sm font-medium mt-2 relative z-10 bg-white/80 px-3 py-1 rounded backdrop-blur">Satara Road, Dhankawadi, Pune</p>
+          <MapPin className="text-primary w-12 h-12 mb-3 relative z-10 drop-shadow-md group-hover:-translate-y-2 transition-transform" />
+          <h3 className="font-serif font-bold text-xl text-primary relative z-10 bg-white/80 px-4 py-1 rounded backdrop-blur">Maratha Mangal</h3>
+          <p className="text-sm font-medium mt-2 relative z-10 bg-white/80 px-3 py-1 rounded backdrop-blur">Bibwewadi, Pune 411037</p>
         </div>
       </div>
     </PageLayout>

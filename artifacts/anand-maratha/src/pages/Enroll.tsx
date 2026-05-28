@@ -82,36 +82,65 @@ export default function Enroll() {
 
   return (
     <PageLayout>
-      <PageHero title="Enroll Now — Join Anand Maratha" subtitle="Create your verified profile and start your journey" />
+      <PageHero title="Enroll Now — Join Maratha Mangal" subtitle="Create your verified profile and start your journey" />
       
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="bg-primary/5 rounded-2xl p-6 md:p-8 mb-10 border border-primary/20">
-          <h2 className="text-2xl font-serif font-bold text-primary mb-4 text-center">Annual Membership — ₹2,000 per year</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="text-accent flex-shrink-0 mt-0.5" size={20} />
-              <span className="text-sm font-medium">Verified Maratha profiles</span>
+        {/* Membership Plans */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-serif font-bold text-primary mb-6 text-center">Choose Your Plan</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Starter Plan */}
+            <div className="bg-white rounded-2xl border-2 border-border p-8 flex flex-col">
+              <div className="mb-2">
+                <span className="text-sm font-bold tracking-widest text-foreground uppercase">STARTER</span>
+                <span className="ml-2 text-xs font-bold text-primary">(FOR FIRST 1000 MEMBERS ONLY)</span>
+              </div>
+              <div className="mb-1">
+                <span className="text-5xl font-serif font-bold text-primary">FREE</span>
+              </div>
+              <div className="text-foreground/50 line-through text-lg mb-6">₹2999</div>
+              <ul className="space-y-3 text-center flex-1 mb-8">
+                <li className="text-sm text-foreground/80 border-b border-border pb-3">1 Year Validity</li>
+                <li className="text-sm text-foreground/80 border-b border-border pb-3">Express Interests to Unlimited Profiles</li>
+                <li className="text-sm text-foreground/80 border-b border-border pb-3">Access to Unlimited Profiles</li>
+                <li className="text-sm text-foreground/80 pb-3">View Additional Profile Information</li>
+              </ul>
+              <button
+                type="button"
+                onClick={() => document.getElementById('enrollment-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full py-3 rounded-lg bg-secondary text-white font-bold text-base hover:bg-secondary/90 transition-colors"
+              >
+                Register Now
+              </button>
             </div>
-            <div className="flex items-start gap-3">
-              <Search className="text-accent flex-shrink-0 mt-0.5" size={20} />
-              <span className="text-sm font-medium">Smart search filters</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <PhoneCall className="text-accent flex-shrink-0 mt-0.5" size={20} />
-              <span className="text-sm font-medium">Direct contact details</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <ShieldCheck className="text-accent flex-shrink-0 mt-0.5" size={20} />
-              <span className="text-sm font-medium">Profile privacy protected</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <HeadphonesIcon className="text-accent flex-shrink-0 mt-0.5" size={20} />
-              <span className="text-sm font-medium">Expert support</span>
+
+            {/* Pro Plan */}
+            <div className="bg-primary rounded-2xl p-8 flex flex-col text-white">
+              <div className="mb-2">
+                <span className="text-sm font-bold tracking-widest uppercase">PRO</span>
+              </div>
+              <div className="mb-1">
+                <span className="text-5xl font-serif font-bold">₹ 2000</span>
+              </div>
+              <div className="text-white/60 line-through text-lg mb-6">₹2999</div>
+              <ul className="space-y-3 text-center flex-1 mb-8">
+                <li className="text-sm text-white/90 border-b border-white/20 pb-3">1 Year Validity</li>
+                <li className="text-sm text-white/90 border-b border-white/20 pb-3">Express Interests to Unlimited Profiles</li>
+                <li className="text-sm text-white/90 border-b border-white/20 pb-3">Access to Unlimited Profiles</li>
+                <li className="text-sm text-white/90 pb-3">View Additional Profile Information</li>
+              </ul>
+              <button
+                type="button"
+                onClick={() => document.getElementById('enrollment-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full py-3 rounded-lg bg-white text-primary font-bold text-base hover:bg-white/90 transition-colors"
+              >
+                Register Now
+              </button>
             </div>
           </div>
         </div>
 
-        <div className="bg-card rounded-2xl shadow-sm border border-border p-6 md:p-8">
+        <div id="enrollment-form" className="bg-card rounded-2xl shadow-sm border border-border p-6 md:p-8">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               
@@ -442,13 +471,13 @@ export default function Enroll() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <p className="font-medium mb-2">Option 1: UPI Transfer</p>
-                    <p className="text-sm text-foreground/80 mb-1">UPI ID: <span className="font-bold text-primary">anandmaratha@sbi</span></p>
+                    <p className="text-sm text-foreground/80 mb-1">UPI ID: <span className="font-bold text-primary">marathamangal@sbi</span></p>
                     <p className="text-sm text-foreground/80">Scan the QR code to pay using any UPI app.</p>
                   </div>
                   <div>
                     <p className="font-medium mb-2">Option 2: Bank Transfer</p>
                     <p className="text-sm text-foreground/80 mb-1">Bank: State Bank of India</p>
-                    <p className="text-sm text-foreground/80 mb-1">A/c Name: Anand Maratha Marriage Bureau</p>
+                    <p className="text-sm text-foreground/80 mb-1">A/c Name: Maratha Mangal</p>
                     <p className="text-sm text-foreground/80 mb-1">A/c No: 34567890123</p>
                     <p className="text-sm text-foreground/80">IFSC: SBIN0001234</p>
                   </div>

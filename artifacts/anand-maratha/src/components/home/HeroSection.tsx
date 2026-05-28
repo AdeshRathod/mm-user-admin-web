@@ -22,6 +22,7 @@ export function HeroSection() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-md">
               Find Your Perfect <br/>
               <span className="text-secondary">Maratha Life Partner</span>
+
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
               Maharashtra's No. 1 & Most Trusted Maratha Matrimony Platform. Join 30,000+ families who found their happiness with us.
